@@ -11,7 +11,7 @@ const cat = (path) => {
 const webCat = (url) => {
     axios.get(url)
     .then(data => console.log(data))
-    .catch(err => console.log('Oops forgot to add another arg \n Try ==> "node step2.js <path>"'));
+    .catch(err => console.log(`Error fetching ${err.config.url} \n ${err}`));
 }
 
 (process.argv[2]==='one.txt')?cat(process.argv[2]):webCat(process.argv[2]);
